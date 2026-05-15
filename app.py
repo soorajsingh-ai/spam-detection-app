@@ -1,10 +1,10 @@
-import streamlit as st
+import os
 import pickle
 
-# load saved files
-model = pickle.load(open("model.pkl", "rb"))
-vectorizer = pickle.load(open("vectorizer.pkl", "rb"))
+BASE_DIR = os.path.dirname(__file__)
 
+model = pickle.load(open(os.path.join(BASE_DIR, "model.pkl"), "rb"))
+vectorizer = pickle.load(open(os.path.join(BASE_DIR, "vectorizer.pkl"), "rb"))
 # UI
 st.title("📩 Spam Detection App")
 
